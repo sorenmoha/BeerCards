@@ -15,6 +15,6 @@ export class PostListComponent {
 //    {title: 'Third Post', content: 'This is my third post\'s content'},
 //  ];
 
-  posts = [];
+  @Input() posts = [];
 
 }

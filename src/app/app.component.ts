@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   posts = [];
 
-  onPostAdded() {
-    this.posts.push();
+  onPostAdded(post) {
+    this.posts.push(post);
   }
 }

@@ -8,10 +8,30 @@
         ngModel
         required
         minlength="2"
-        placeholder="Add a Title"
+        placeholder="Add a Beer"
         #title="ngModel">
       <mat-error *ngIf="title.invalid">Please enter a valid title </mat-error>
     </mat-form-field>
+
+    <mat-form-field>
+      <mat-select 
+        matInput
+        placeholder="Type of Beer"
+        ngModel
+        required
+        #content="ngModel"
+      >
+      <mat-error>Please pick a type </mat-error>
+        <mat-option value="" disabled selected>None</mat-option>
+        <mat-option value="pilsner">Pilsner</mat-option>
+        <mat-option value="lager">Lager</mat-option>
+        <mat-option value="ipa">IPA</mat-option>
+        <mat-option value="hazy-ipa">Hazy IPA</mat-option>
+        <mat-option value="witbier">Witbier</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
 
     <mat-form-field>
         <textarea
@@ -20,7 +40,7 @@
         name="content"
         ngModel
         required
-        placeholder="Add a Post"
+        placeholder="What did you think?"
         #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter valid content</mat-error>
     </mat-form-field>

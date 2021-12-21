@@ -14,6 +14,7 @@ import { PostsService } from "../posts.service";
 export class PostCreateComponent {
   enteredTitle = '';
   enteredContent = '';
+  enteredTypeo = '';
 
 
   constructor(public postsService: PostsService) {}
@@ -23,7 +24,7 @@ export class PostCreateComponent {
       return;
     }
 
-    this.postsService.addPost(form.value.title, form.value.content);
+    this.postsService.addPost(form.value.title, form.value.content, form.value.content);
     form.resetForm();
   }
 }

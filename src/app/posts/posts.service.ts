@@ -18,8 +18,8 @@ export class PostsService {
     return this.postsUpdated.asObservable();
   }
 
-  addPost(title: string, content: string, rating: string) {
-    const post: Post = {title: title, content: content, rating: content, beer: content};
+  addPost(title: string, type: string, abv: string, rating: string,  content: string) {
+    const post: Post = {title: title, abv: content, type: content, rating: content, content: content, };
     this.posts.push(post);
     this.postsUpdated.next([...this.posts]);
   }

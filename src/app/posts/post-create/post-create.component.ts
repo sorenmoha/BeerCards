@@ -13,8 +13,11 @@ import { PostsService } from "../posts.service";
 
 export class PostCreateComponent {
   enteredTitle = '';
+  enteredBeer = '';
   enteredContent = '';
-  enteredTypeo = '';
+  enterdRating = '';
+  enteredAbv = '';
+
 
 
   constructor(public postsService: PostsService) {}
@@ -24,7 +27,7 @@ export class PostCreateComponent {
       return;
     }
 
-    this.postsService.addPost(form.value.title, form.value.content, form.value.content);
+    this.postsService.addPost(form.value.title, form.value.type, form.value.abv, form.value.rating, form.value.content);
     form.resetForm();
   }
 }

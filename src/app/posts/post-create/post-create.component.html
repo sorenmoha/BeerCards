@@ -16,20 +16,52 @@
     <mat-form-field>
       <mat-select
         matInput
+        name="content"
         placeholder="Type of Beer"
         ngModel
         required
-        #content="ngModel"
+        #type="ngModel"
       >
-      <mat-error>Please pick a type </mat-error>
+
         <mat-option value="" disabled selected>None</mat-option>
-        <mat-option value="pilsner">Pilsner</mat-option>
-        <mat-option value="lager">Lager</mat-option>
-        <mat-option value="ipa">IPA</mat-option>
-        <mat-option value="hazy-ipa">Hazy IPA</mat-option>
-        <mat-option value="witbier">Witbier</mat-option>
+        <mat-option value="Pilsner">Pilsner</mat-option>
+        <mat-option value="Lager">Lager</mat-option>
+        <mat-option value="IPA">IPA</mat-option>
+        <mat-option value="Hazy IPA">Hazy IPA</mat-option>
+        <mat-option value="Witbier">Witbier</mat-option>
       </mat-select>
+      <mat-error *ngIf="type.invalid">Please pick a type </mat-error>
     </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>ABV</mat-label>
+      <input
+      matInput
+      value="ABV"
+      type="number"
+      placeholder="ABV"
+      maxlength="2"
+      ngModel
+      #abv="ngModel"
+      >
+    <mat-error *ngIf="abv.invalid">Please enter valid ABV</mat-error>
+    </mat-form-field>
+
+    <mat-slider
+    ngModel
+    #rating="ngModel"
+    value="rating"
+    type="number"
+    min="1"
+    max="10"
+    step="1.0"
+    value="5"
+    thumbLabel tickInterval="1"
+
+    >
+  <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
+   </mat-slider>
 
 
 
@@ -41,7 +73,9 @@
         ngModel
         required
         placeholder="What did you think?"
-        #content="ngModel"></textarea>
+        #content="ngModel"
+        >
+      </textarea>
       <mat-error *ngIf="content.invalid">Please enter valid content</mat-error>
     </mat-form-field>
 

@@ -1,6 +1,8 @@
 export interface Post {
   title: string;
-  content: string;
-  beer: string; 
+  type: string;
   rating: string;
+  content: string;
+  abv: string;
+
 }

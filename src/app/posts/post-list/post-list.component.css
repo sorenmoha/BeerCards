@@ -1,8 +1,13 @@
 :host {
   display: block;
   margin-top: 1rem;
+  margin-bottom: 10px;
 }
 
 .info-text {
   text-align: center;
+}
+
+.card {
+  margin-bottom: 20px;
 }

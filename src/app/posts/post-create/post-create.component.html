@@ -16,7 +16,8 @@
     <mat-form-field>
       <mat-select
         matInput
-        name="content"
+        type="text"
+        name="type"
         placeholder="Type of Beer"
         ngModel
         required
@@ -38,6 +39,8 @@
       <mat-label>ABV</mat-label>
       <input
       matInput
+      required
+      name="abv"
       value="ABV"
       type="number"
       placeholder="ABV"
@@ -51,16 +54,17 @@
     <mat-slider
     ngModel
     #rating="ngModel"
-    value="rating"
+    name="rating"
     type="number"
+    value="5"
     min="1"
     max="10"
     step="1.0"
-    value="5"
     thumbLabel tickInterval="1"
+    required
 
     >
-  <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
+    <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
    </mat-slider>
 
 
@@ -69,6 +73,7 @@
         <textarea
         matInput
         rows="5"
+        type="text"
         name="content"
         ngModel
         required
@@ -79,11 +84,11 @@
       <mat-error *ngIf="content.invalid">Please enter valid content</mat-error>
     </mat-form-field>
 
-  <button
+    <button
     mat-raised-button
     color="primary"
     type="submit">Submit Post
-  </button>
+    </button>
 
   </form>
 

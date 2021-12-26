@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
-import { Post } from "../post.model";
 import { PostsService } from "../posts.service";
 
 
@@ -18,8 +17,6 @@ export class PostCreateComponent {
   enterdRating = '';
   enteredAbv = '';
 
-
-
   constructor(public postsService: PostsService) {}
 
   onAddPost(form: NgForm) {
@@ -27,7 +24,7 @@ export class PostCreateComponent {
       return;
     }
 
-    this.postsService.addPost(form.value.title, form.value.type, form.value.abv, form.value.rating, form.value.content);
+    this.postsService.addPost(form.value.title, form.value.type, form.value.abv, form.value.rating, form.value.content );
     form.resetForm();
   }
 }

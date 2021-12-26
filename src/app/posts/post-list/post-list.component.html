@@ -1,10 +1,10 @@
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-card class="card" *ngFor="let post of posts">
-    <mat-card-title>
+    <mat-card-title class="title">
       {{post.title}}
     </mat-card-title>
-    <p>Beer: {{post.type}} </p>
-    <p>ABV: {{post.abv}}</p>
+    <p>Type: {{post.type}} </p>
+    <p>ABV: {{post.abv}}%</p>
     <p>User's Rating: {{post.rating}}</p>
     <p>Description: {{post.content}} </p>
     

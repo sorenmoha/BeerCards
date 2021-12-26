@@ -1,108 +1,110 @@
 <mat-card>
-  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
-    <mat-form-field>
+  <mat-card-content>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <mat-form-field>
         <input class="beername"
-        matInput
-        type="text"
-        name="title"
-        ngModel
-        required
-        minlength="2"
-        placeholder="Beer Name (ex Bud Light Platinum)"
-        #title="ngModel">
-      <mat-error *ngIf="title.invalid">Please enter a valid title </mat-error>
-    </mat-form-field>
+          matInput
+          type="text"
+          name="title"
+          ngModel
+          required
+          minlength="2"
+          placeholder="Beer Name (ex Bud Light Platinum)"
+          #title="ngModel">
+        <mat-error *ngIf="title.invalid">Please enter a valid title </mat-error>
+      </mat-form-field>
 
-    <mat-form-field>
-      <mat-select
-        matInput
-        type="text"
-        name="type"
-        ngModel
-        required
-        #type="ngModel"
-        placeholder="Pick a Type"
-      >
-
-        <mat-option selected disabled>Pick a Type</mat-option>
-        <mat-option value="IPA">IPA</mat-option>
-        <mat-option value="Lager">Lager</mat-option>
-        <mat-option value="Hazy IPA">Hazy IPA</mat-option>
-        <mat-option value="Pilsner">Pilsner</mat-option>     
-        <mat-option value="Trippel">Trippel</mat-option>  
-        <mat-option value="Kolsch">Kolsch</mat-option> 
-        <mat-option value="Witbier">Witbier</mat-option>
-        <mat-option value="Sour">Sour</mat-option>
-        <mat-option value="Stout">Stout</mat-option>
-        <mat-option value="Porter">Porter</mat-option>
-        <mat-option value="Quadrupel">Quadrupel</mat-option>
-        <mat-option value="Dubbel">Dubbel</mat-option>
-        <mat-option value="Fruit Beer">Fruit Beer</mat-option>
-      </mat-select>
-      
-      <mat-error *ngIf="type.invalid">Please pick a type </mat-error>
-    </mat-form-field>
-
-
-    <mat-form-field>
-      <mat-label>ABV%</mat-label>
-      <input
-      matInput
-      required
-      name="abv"
-      value="ABV"
-      type="number"
-      placeholder="ABV"
-      maxlength="2"
-      ngModel
-      #abv="ngModel"
-      >
-    <mat-error *ngIf="abv.invalid">Please enter valid ABV</mat-error>
-    </mat-form-field>
-    <p class="rating">Rating*</p>
-    <mat-slider 
-    ngModel
-    required
-    #rating="ngModel"
-    name="rating"
-    type="number"
-    min="1"
-    max="10"
-    step="0.1"
-    value="5.0"
-    thumbLabel tickInterval="1"
-    
-
-    >
-    
-    <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
-   </mat-slider>
-
-
-
-    <mat-form-field>
-        <textarea
-        matInput
-        rows="5"
-        type="text"
-        name="content"
-        ngModel
-        required
-        placeholder="What did you think?"
-        #content="ngModel"
+      <mat-form-field>
+        <mat-select
+          matInput
+          type="text"
+          name="type"
+          ngModel
+          required
+          #type="ngModel"
+          placeholder="Pick a Type"
         >
-      </textarea>
-      <mat-error *ngIf="content.invalid">Please enter valid content</mat-error>
-    </mat-form-field>
 
-    <button
-    mat-raised-button
-    color="primary"
-    type="submit">Submit Post
-    </button>
+          <mat-option selected disabled>Pick a Type</mat-option>
+          <mat-option value="IPA">IPA</mat-option>
+          <mat-option value="Lager">Lager</mat-option>
+          <mat-option value="Hazy IPA">Hazy IPA</mat-option>
+          <mat-option value="Pilsner">Pilsner</mat-option>     
+          <mat-option value="Trippel">Trippel</mat-option>  
+          <mat-option value="Kolsch">Kolsch</mat-option> 
+          <mat-option value="Witbier">Witbier</mat-option>
+          <mat-option value="Sour">Sour</mat-option>
+          <mat-option value="Stout">Stout</mat-option>
+          <mat-option value="Porter">Porter</mat-option>
+          <mat-option value="Quadrupel">Quadrupel</mat-option>
+          <mat-option value="Dubbel">Dubbel</mat-option>
+          <mat-option value="Fruit Beer">Fruit Beer</mat-option>
+        </mat-select>
+        
+        <mat-error *ngIf="type.invalid">Please pick a type </mat-error>
+      </mat-form-field>
 
-  </form>
+
+      <mat-form-field>
+        <mat-label>ABV%</mat-label>
+        <input
+          matInput
+          required
+          name="abv"
+          value="ABV"
+          type="number"
+          placeholder="ABV"
+          maxlength="2"
+          ngModel
+          #abv="ngModel"
+        >
+      <mat-error *ngIf="abv.invalid">Please enter valid ABV</mat-error>
+      </mat-form-field>
+      <p class="rating">Rating*</p>
+      <mat-slider 
+        ngModel
+        required
+        #rating="ngModel"
+        name="rating"
+        type="number"
+        color="primary"
+        min="0"
+        max="10"
+        step="0.1"
+        thumbLabel
+        tickInterval="10"
+      
+      >
+      
+      
+      <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
+    </mat-slider>
+    
 
 
+      <mat-form-field>
+          <textarea
+          matInput
+          rows="5"
+          type="text"
+          name="content"
+          ngModel
+          required
+          placeholder="What did you think?"
+          #content="ngModel"
+          >
+        </textarea>
+        <mat-error *ngIf="content.invalid">Please enter valid content</mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit">Submit Post
+      </button>
+
+    </form>
+
+  </mat-card-content>
 </mat-card>
 

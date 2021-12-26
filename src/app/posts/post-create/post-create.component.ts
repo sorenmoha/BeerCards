@@ -12,7 +12,7 @@ import { PostsService } from "../posts.service";
 
 export class PostCreateComponent {
   enteredTitle = '';
-  enteredBeer = '';
+  enteredType = '';
   enteredContent = '';
   enterdRating = '';
   enteredAbv = '';

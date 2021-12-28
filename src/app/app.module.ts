@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -40,7 +40,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatSliderModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatSlideToggleModule
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

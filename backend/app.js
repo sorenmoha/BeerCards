@@ -6,7 +6,7 @@ const Post = require('./models/post');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://pheric:RLqp7NumuHQ3pF3@cluster0.prsr6.mongodb.net/BeerCards?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://pheric:tester12!@cluster0.prsr6.mongodb.net/BeerCards?retryWrites=true&w=majority")
 .then(() => {
   console.log('Connected to the databse')
 })
@@ -52,6 +52,16 @@ app.get('/api/posts', (req, res, next) => {
       posts: documents
     });
   });
+  
 });
+
+
+app.delete('/api/posts/:id', (req, res, next) => {
+  console.log(req.params.id)
+  res.status(200).json({message: 'Post removed'});
+});
+
+
+
 
 module.exports = app;

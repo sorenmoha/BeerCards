@@ -1,0 +1,29 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    ;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+   
+}
+.flex {
+    flex: 1 1 auto;
+}
+
+.beers {
+    font-size: 29px;
+}
+
+.middle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}

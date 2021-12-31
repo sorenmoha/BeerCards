@@ -1,12 +1,13 @@
 <mat-card>
   <mat-card-content>
-    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <form (submit)="onSavePost(postForm)" #postForm="ngForm" >
       <mat-form-field>
         <input class="beername"
           matInput
           type="text"
           name="title"
           ngModel
+          [ngModel]="post?.title"
           required
           minlength="2"
           placeholder="Beer Name (ex. Bud Light Platinum)"
@@ -16,10 +17,10 @@
 
       <mat-form-field>
         <mat-select
-          matInput
           type="text"
           name="type"
           ngModel
+          [ngModel]="post?.type"
           required
           #type="ngModel"
           placeholder="Pick a Type"
@@ -57,6 +58,7 @@
           placeholder="ABV"
           maxlength="2"
           ngModel
+          [ngModel]="post?.abv"
           #abv="ngModel"
         >
       <mat-error *ngIf="abv.invalid">Please enter valid ABV</mat-error>
@@ -64,6 +66,7 @@
       <p class="rating">Rating*</p>
       <mat-slider 
         ngModel
+        [ngModel]="post?.rating"
         required
         #rating="ngModel"
         name="rating"
@@ -89,7 +92,7 @@
           rows="5"
           type="text"
           name="content"
-          ngModel
+          [ngModel]="post?.content"
           required
           placeholder="What did you think?"
           #content="ngModel"

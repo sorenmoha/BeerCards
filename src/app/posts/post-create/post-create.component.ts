@@ -15,9 +15,9 @@ import { Post } from '../post.model';
 export class PostCreateComponent implements OnInit{
   enteredTitle = '';
   enteredType = '';
-  enteredContent = '';
-  enterdRating = '';
   enteredAbv = '';
+  enterdRating = '';
+  enteredContent = '';
   post: Post; 
   private mode = 'create';
   private postId: string;
@@ -49,9 +49,15 @@ export class PostCreateComponent implements OnInit{
     if (this.mode === 'create') {
       this.postsService.addPost(form.value.title, form.value.type, form.value.abv, form.value.rating, form.value.content);
     } else {
-      this.postsService.updatePost(this.postId, form.value.title, form.value.type, form.value.abv, form.value.rating, form.value.content);
+      this.postsService.updatePost(
+        this.postId, 
+        form.value.title, 
+        form.value.type, 
+        form.value.abv, 
+        form.value.rating, 
+        form.value.content
+      );
     }
-    
     form.resetForm();
   }
 }

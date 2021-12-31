@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 import { Post } from './post.model';
@@ -13,14 +14,13 @@ export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getPosts() {
     this.http
-      .get<{message: string, posts: any}>(
-        'http://localhost:3000/api/posts'
-      )
-      .pipe(map((postData) => {
+      .get<{ message: string, posts: any }>('http://localhost:3000/api/posts/')
+      .pipe(
+        map(postData => {
         return postData.posts.map(post => {
           return {
             title: post.title,
@@ -31,12 +31,12 @@ export class PostsService {
             id: post._id
           };
         });
-      }))
-      
-      .subscribe((transformedPosts) => {
-        this.posts = transformedPosts;
-        this.postsUpdated.next([...this.posts]); 
-      });
+      })
+    )
+    .subscribe(transformedPosts => {
+      this.posts = transformedPosts;
+      this.postsUpdated.next([...this.posts]); 
+    });
   }
 
   getPostsUpdateListener() {
@@ -45,14 +45,17 @@ export class PostsService {
 
   getPost(id: string) {
     return this.http.get<{_id: string, title: string, type: string, abv: number, rating: number, content: string}>(
-      'http://localhost:3000/api/posts' + id
+      'http://localhost:3000/api/posts/' + id
     );
   }
 
   addPost(title: string, type: string, abv: number, rating: number,  content: string) {
     const post: Post = {id: null, title: title, abv: abv, type: type, rating: rating, content: content, };
     this.http
-      .post<{ message: string, postId: string }>('http://localhost:3000/api/posts', post)
+      .post<{ message: string, postId: string }>(
+        'http://localhost:3000/api/posts', 
+        post
+      )
       .subscribe(responseData => {
         const id = responseData.postId;
         post.id = id;
@@ -62,8 +65,9 @@ export class PostsService {
   }
 
   updatePost(id: string, title: string, type: string, abv: number, rating: number, content: string) {
-    const post: Post = { id: id, title, type, abv, rating, content}
-    this.http.put('http://localhost:3000/api/posts' + id, post)
+    const post: Post = { id: id, title: title, type: type, abv: abv, rating: rating, content: content }
+    this.http
+      .put('http://localhost:3000/api/posts/' + id, post)
       .subscribe(response => {
         const updatedPosts = [...this.posts];
         const oldPostIndex = updatedPosts.findIndex(p => p.id === post.id);

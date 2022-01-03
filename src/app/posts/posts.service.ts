@@ -4,9 +4,8 @@ import { Subject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-
 import { Post } from './post.model';
-;
+
 
 
 @Injectable({providedIn: 'root'})
@@ -61,6 +60,7 @@ export class PostsService {
         post.id = id;
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
+        this.router.navigate(['/'])
       });
   }
 
@@ -74,6 +74,7 @@ export class PostsService {
         updatedPosts[oldPostIndex] = post;
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]); 
+        this.router.navigate(['/'])
       });
 
   }

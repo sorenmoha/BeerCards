@@ -44,7 +44,6 @@
         <mat-error *ngIf="type.invalid">Please pick a type </mat-error>
       </mat-form-field>
 
-
       <mat-form-field>
         <mat-label>ABV%</mat-label>
         <input
@@ -57,7 +56,7 @@
           [ngModel]="post?.abv"
           #abv="ngModel"
         >
-      <mat-error *ngIf="abv.invalid">Please enter valid ABV</mat-error>
+      <mat-error *ngIf="abv.invalid">Please enter ABV</mat-error>
       </mat-form-field>
       <p class="rating">Rating*</p>
       <mat-slider 
@@ -74,7 +73,6 @@
         tickInterval="10"
       
       >
-      
       
       <mat-error *ngIf="rating.invalid">Please enter valid rating</mat-error>
     </mat-slider>

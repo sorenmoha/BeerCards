@@ -11,6 +11,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -42,7 +45,10 @@ import { AppRoutingModule } from './app-routing-module';
     MatSliderModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
+    FlexLayoutModule,
     HttpClientModule,
+   
     
   
     

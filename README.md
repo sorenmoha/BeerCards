@@ -17,7 +17,7 @@ Users will fill out the form and once hitting submit their beer will be added to
 
 
 
-The beer collection page will look something like this with many differnt types of beers. 
+The beer collection page will look something like this with many differnt types of beers, ideally in a grid view with a sort feature. 
 ![ae632fc3db27c5a961118ef698d66f77](https://user-images.githubusercontent.com/73203671/152656918-3de42ab4-92db-4527-a04b-b31cb906afc1.png)
 
 

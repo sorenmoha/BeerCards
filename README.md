@@ -4,4 +4,3 @@ This app will allow users to rate their favorite (and not so favorite) beers and
 
 This app is still in early stages of development. 
 
-Wireframes will come soon. 

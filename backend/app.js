@@ -7,7 +7,7 @@ const postsRoutes = require('./routes/posts');
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://pheric:tester12!@cluster0.prsr6.mongodb.net/BeerCards?retryWrites=true&w=majority"
+  "mongodb+srv://pheric:<password>@cluster0.prsr6.mongodb.net/BeerCards?retryWrites=true&w=majority"
 )
 .then(() => {
   console.log('Connected to the databse')

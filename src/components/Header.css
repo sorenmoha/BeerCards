@@ -1,0 +1,8 @@
+.navbar {
+  display: flex;
+  color: '#ffc107';
+  textTransform: 'none'; 
+  text-decoration: none;
+  fontWeight: 'bold';
+  padding: 0.75rem 1.25rem;
+}

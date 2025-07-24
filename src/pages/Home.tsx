@@ -21,12 +21,12 @@ export default function Home() {
         <Grid>
           <Card
             sx={{
-              height: 300,
-              width: 300,
+              height: 400,
+              width: 350,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              
+
             }}
           >
             <CardContent
@@ -38,34 +38,40 @@ export default function Home() {
                 overflow: 'hidden',
               }}
             >
-              <Typography variant="h6">{beer.name}</Typography>
-              <Typography variant="body2">{beer.type}</Typography>
-              <Typography variant="body2">ABV: {beer.abv}%</Typography>
-              <Typography variant="body2">Rating: {beer.rating}</Typography>
+              <Typography variant="h5">{beer.name}</Typography>
+              <Typography variant="subtitle1" sx={{ mt: 1 }}>
+                Type: {beer.type}
+              </Typography>
+              <Typography variant="subtitle1" sx={{ mt: 1 }}>
+                ABV: {beer.abv}%
+              </Typography>
+              <Typography variant="subtitle1" sx={{ mt: 1, mb: 1 }}>
+                Rating: {beer.rating}/10
+              </Typography>
 
               <Box
-  sx={{
-    maxHeight: 80,
-    maxWidth: '100%',
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    mt: 1,
-    p: 1,
-    backgroundColor: '#f5f5f5',
-    borderRadius: 1,
-  }}
->
-  <Typography
-    variant="body2"
-    sx={{ 
-      whiteSpace: 'pre-wrap',
-      wordBreak: 'break-word',
-      overflowWrap: 'break-word',
-    }}
-  >
-    {beer.description}
-  </Typography>
-</Box>
+                sx={{
+                  maxHeight: 150,
+                  maxWidth: '100%',
+                  overflowY: 'auto',
+                  overflowX: 'hidden',
+                  mt: 1,
+                  p: 1,
+                  backgroundColor: '#f5f5f5',
+                  borderRadius: 1,
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                  }}
+                >
+                  {beer.description}
+                </Typography>
+              </Box>
 
             </CardContent>
 

@@ -21,6 +21,7 @@ export default function BeerForm({ initialData, isEdit = false }: BeerFormProps)
   const { addBeer, updateBeer } = useBeerContext();
   const navigate = useNavigate();
 
+  const [searchTerm, setSearchTerm] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [type, setType] = useState('');
@@ -62,6 +63,7 @@ export default function BeerForm({ initialData, isEdit = false }: BeerFormProps)
     <Box display="flex" justifyContent="center" mt={5}>
       <Paper elevation={3} sx={{ p: 4, width: 400 }}>
         <form onSubmit={handleSubmit}>
+
           <TextField
             label="Beer Name (ex. Bud Light Platinum)"
             variant="standard"
@@ -134,7 +136,12 @@ export default function BeerForm({ initialData, isEdit = false }: BeerFormProps)
             sx={{ mb: 3 }}
           />
 
-          <Button type="submit" variant="contained" fullWidth sx={{ bgcolor: '#673ab7' }}>
+          <Button
+            type="submit"
+            variant="contained"
+            fullWidth
+            sx={{ bgcolor: '#673ab7' }}
+          >
             {isEdit ? 'Update Post' : 'Submit Post'}
           </Button>
         </form>
